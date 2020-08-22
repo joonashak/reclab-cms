@@ -2,9 +2,12 @@
   "name": "reclab-cms",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Joonas Häkkinen",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "EUPL-1.2",
+  "engines": {
+    "node": ">=14.7"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
