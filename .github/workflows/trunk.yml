@@ -1,12 +1,12 @@
-name: Test trunk
+name: Trunk Push
 
 on:
   push:
     branches: trunk
-    
+
 jobs:
   test:
-    name: Test
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 14.7
       - run: npm ci
-      - run: npm test:e2e
+      - run: npm run test:e2e
         env:
           CI: true
