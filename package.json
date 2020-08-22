@@ -6,7 +6,7 @@
   "private": true,
   "license": "EUPL-1.2",
   "engines": {
-    "node": ">=14.7"
+    "node": ">=14.8"
   },
   "scripts": {
     "prebuild": "rimraf dist",
