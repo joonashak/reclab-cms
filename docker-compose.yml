@@ -47,8 +47,6 @@ services:
       - NODE_ENV=test
       - PORT=3001
       - DATABASE_URL=postgres://postgres:postgres@test-db:5432/postgres
-    volumes:
-      - ./:/usr/src/app
     depends_on:
       - test-db
 

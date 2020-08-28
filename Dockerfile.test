@@ -5,5 +5,8 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci
 
+# Copy files.
+COPY . .
+
 # Start via Nest in development mode.
 CMD npm run test:e2e
