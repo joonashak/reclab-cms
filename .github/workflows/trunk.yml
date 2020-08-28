@@ -15,4 +15,4 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.7
-      - run: docker-compose up test-app
+      - run: docker-compose run test-app
