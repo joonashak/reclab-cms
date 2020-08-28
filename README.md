@@ -6,13 +6,21 @@ Recover Laboratory CMS
 
 ### Development
 
-Start development environment:
+Start development environment (requires Docker):
 
 ```bash
-docker-compose up
+npm run start:dev
 ```
 
-The CMS server will listen at port 3001.
+The CMS server will listen at port 3001 and Adminer at 8080.
+
+### E2E Tests
+
+Run all tests:
+
+```bash
+npm test
+```
 
 ## License
 
