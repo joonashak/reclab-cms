@@ -13,8 +13,8 @@ export class UsersService {
 
   create(createUserDto: CreateUserDto): Promise<User> {
     const user = new User();
-    user.firstname = createUserDto.firstname;
-    user.lastname = createUserDto.lastname;
+    user.username = createUserDto.username;
+    user.passwordHash = createUserDto.passwordHash;
 
     return this.usersRepository.save(user);
   }
