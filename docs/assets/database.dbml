@@ -1,0 +1,22 @@
+Project reclab_cms {
+  database_type: 'PostgreSQL'
+}
+
+Table user {
+  id UUID [pk]
+  username TEXT [not null, unique]
+  passwordHash TEXT [not null]
+}
+
+Table page {
+  id UUID [pk]
+  title TEXT [not null, default: '']
+  content TEXT [not null, default: '']
+  updatedAt TIMESTAMPZ [not null, default: 'NOW()']
+}
+
+Table route {
+  id UUID [pk]
+  pageId UUID [ref: > page.id, not null]
+  path TEXT [not null, unique]
+}

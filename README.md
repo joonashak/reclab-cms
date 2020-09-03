@@ -2,6 +2,10 @@
 
 Recover Laboratory CMS
 
+## Docs
+
+[Database](./docs/Database.md)
+
 ## Configuration
 
 ### Development Environment
