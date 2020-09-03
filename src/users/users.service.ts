@@ -13,8 +13,8 @@ export class UsersService {
 
   create(createUserDto: CreateUserDto): Promise<User> {
     const user = new User();
-    user.firstname = createUserDto.firstname;
-    user.lastname = createUserDto.lastname;
+    user.username = createUserDto.username;
+    user.passwordHash = createUserDto.passwordHash;
 
     return this.usersRepository.save(user);
   }
@@ -23,8 +23,8 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
-  findOne(id: string): Promise<User> {
-    return this.usersRepository.findOne(id);
+  findOne(username: string): Promise<User> {
+    return this.usersRepository.findOne({ username });
   }
 
   async remove(id: string): Promise<void> {
