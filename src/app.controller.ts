@@ -8,6 +8,7 @@ import { LocalAuthGuard } from "./auth/local-auth.guard";
 export class AppController {
   constructor(private readonly appService: AppService, private authService: AuthService) {}
 
+  // FIXME: Remove this and app.service.
   @Get()
   getHello(): string {
     return this.appService.getHello();
