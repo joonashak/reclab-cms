@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { PagesService } from './pages.service';
 import { Page } from './page.entity';
 
@@ -7,7 +7,7 @@ export class PagesController {
   constructor(private readonly pagesService: PagesService) {}
 
   @Get()
-  findOne(@Param('id') id: string): Promise<Page> {
+  findOne(@Query('id') id: string): Promise<Page> {
     return this.pagesService.findOne(id);
   }
 }
