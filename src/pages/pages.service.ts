@@ -13,4 +13,8 @@ export class PagesService {
   async findOne(id: string): Promise<Page> {
     return this.pagesRepository.findOne(id);
   }
+
+  async findAll(): Promise<Page[]> {
+    return this.pagesRepository.find();
+  }
 }
