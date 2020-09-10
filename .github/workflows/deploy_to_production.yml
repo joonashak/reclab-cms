@@ -17,7 +17,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: joonashak/reclab-cms/asd
+          repository: joonashak/reclab-cms/reclab-cms
           tag_with_ref: true
           dockerfile: ./Dockerfile.ci
       - name: Deploy to Heroku
