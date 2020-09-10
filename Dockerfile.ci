@@ -5,7 +5,8 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# Copy files.
+# Copy files and build app.
 COPY . .
+RUN npm run build
 
-CMD npm run test:e2e
+RUN npm run start:prod
