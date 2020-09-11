@@ -11,13 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Push to GitHub Packages
+      - name: Publish to Dockerhub
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: joonashak/reclab-cms/asd
+          username: joonashak
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: joonashak/reclab-cms
           tag_with_ref: true
           dockerfile: ./Dockerfile.ci
       - name: Deploy to Heroku
