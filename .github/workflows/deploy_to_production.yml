@@ -17,6 +17,7 @@ jobs:
           username: joonashak
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: joonashak/reclab-cms
+          tags: latest
           tag_with_ref: true
           dockerfile: ./Dockerfile.ci
       - name: Deploy to Heroku
