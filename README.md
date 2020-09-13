@@ -34,7 +34,7 @@ Name | Description
 Start development environment (requires Docker):
 
 ```bash
-npm run start:dev
+npm start
 ```
 
 The CMS server will listen at port 3001 and Adminer at 8080.
