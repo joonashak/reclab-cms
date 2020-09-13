@@ -34,16 +34,17 @@ Name | Description
 Start development environment (requires Docker):
 
 ```bash
-npm run start:dev
+npm start
 ```
 
-The CMS server will listen at port 3001 and Adminer at 8080.
+The CMS server will listen at port 3001 and Adminer at 8080. Changes in the `src/` folder are synced to the container and hot-loaded by Nest.
 
 ### Production
 
-Start in production mode:
+Build and start in production mode:
 
 ```bash
+npm run build
 npm run start:prod
 ```
 
@@ -54,6 +55,14 @@ Run all tests:
 ```bash
 npm test
 ```
+
+## Deployment Pipeline
+
+The pipeline is set up for trunk-based development with pull requests and releases used as deployment triggers.
+
+1. Push changes to `trunk` branch. Github runs tests for the new `HEAD`.
+2. Create a pull request to merge changes from `trunk` to `main`. The merge can be completed once all tests have passed. This triggers deployment to staging.
+3. Publish a new release to deploy to production. A Docker image is also created and published [here](https://hub.docker.com/repository/docker/joonashak/reclab-cms) for use in integration tests, etc.
 
 ## License
 
