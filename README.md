@@ -37,7 +37,7 @@ Start development environment (requires Docker):
 npm start
 ```
 
-The CMS server will listen at port 3001 and Adminer at 8080.
+The CMS server will listen at port 3001 and Adminer at 8080. Changes in the `src/` folder are synced to the container and hot-loaded by Nest.
 
 ### Production
 

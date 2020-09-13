@@ -12,7 +12,7 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
       - JWT_SECRET=asd
     volumes:
-      - ./:/usr/src/app
+      - ./src:/usr/src/app/src
     depends_on:
       - db
 
