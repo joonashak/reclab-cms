@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Page } from 'src/pages/page.entity';
+import { Page } from '../pages/page.entity';
 import { Connection, Repository } from 'typeorm';
 
 const protect = () => {

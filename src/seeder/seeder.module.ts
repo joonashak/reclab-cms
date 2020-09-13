@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SeederService } from './seeder.service';
 import { SeederController } from './seeder.controller';
-import { Page } from 'src/pages/page.entity';
+import { Page } from '../pages/page.entity'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Page])],
