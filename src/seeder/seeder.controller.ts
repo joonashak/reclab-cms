@@ -9,4 +9,15 @@ export class SeederController {
   clear(): Promise<void> {
     return this.seederService.clear();
   }
+
+  @Get('seed')
+  seed(): Promise<void> {
+    return this.seederService.seed();
+  }
+
+  @Get('reset')
+  async reset(): Promise<void> {
+    await this.seederService.clear();
+    await this.seederService.seed();
+  }
 }
