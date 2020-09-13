@@ -6,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
+import { SeederModule } from './seeder/seeder.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { RoutesModule } from './routes/routes.module';
     AuthModule,
     PagesModule,
     RoutesModule,
+    SeederModule,
   ],
   controllers: [AppController],
   providers: [AppService],
