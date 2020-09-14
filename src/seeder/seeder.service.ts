@@ -1,7 +1,12 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Page } from '../pages/page.entity';
 import { Connection, Repository } from 'typeorm';
+import { Page } from '../pages/page.entity';
+import { Route } from '../routes/route.entity';
+import { User } from '../users/user.entity';
+import pagesSeed from './data/pages.seed';
+import routesSeed from './data/routes.seed';
+import usersSeed from './data/users.seed';
 
 const protect = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -14,6 +19,10 @@ export class SeederService {
   constructor(
     @InjectRepository(Page)
     private readonly pagesRepository: Repository<Page>,
+    @InjectRepository(Route)
+    private readonly routesRepository: Repository<Route>,
+    @InjectRepository(User)
+    private readonly usersRepository: Repository<User>,
     private connection: Connection,
   ) {}
 
@@ -25,10 +34,8 @@ export class SeederService {
 
   async seed(): Promise<void> {
     protect();
-    await this.pagesRepository.save({
-      title: 'as',
-      content: 'd',
-      updatedAt: new Date(),
-    });
+    await this.usersRepository.save(usersSeed);
+    await this.pagesRepository.save(pagesSeed);
+    await this.routesRepository.save(routesSeed);
   }
 }
