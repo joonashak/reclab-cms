@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
@@ -23,6 +22,5 @@ import { LanguagesModule } from './languages/languages.module';
     SeederModule,
     LanguagesModule,
   ],
-  controllers: [AppController],
 })
 export class AppModule {}
