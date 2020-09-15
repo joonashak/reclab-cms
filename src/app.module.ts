@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SeederModule } from './seeder/seeder.module';
+import { LanguagesModule } from './languages/languages.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { SeederModule } from './seeder/seeder.module';
     PagesModule,
     RoutesModule,
     SeederModule,
+    LanguagesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
