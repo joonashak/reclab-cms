@@ -7,6 +7,8 @@ import { User } from '../users/user.entity';
 import pagesSeed from './data/pages.seed';
 import routesSeed from './data/routes.seed';
 import usersSeed from './data/users.seed';
+import { Language } from '../languages/language.entity';
+import languageSeed from './data/language.seed';
 
 const protect = () => {
   if (process.env.NODE_ENV === 'production') {
@@ -23,6 +25,8 @@ export class SeederService {
     private readonly routesRepository: Repository<Route>,
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,
+    @InjectRepository(Language)
+    private readonly languageRepository: Repository<Language>,
     private connection: Connection,
   ) {}
 
@@ -35,6 +39,7 @@ export class SeederService {
   async seed(): Promise<void> {
     protect();
     await this.usersRepository.save(usersSeed);
+    await this.languageRepository.save(languageSeed);
     await this.pagesRepository.save(pagesSeed);
     await this.routesRepository.save(routesSeed);
   }

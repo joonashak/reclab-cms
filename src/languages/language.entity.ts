@@ -1,16 +1,13 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Page {
+export class Language {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column('text')
-  title: string;
+  code: string;
 
   @Column('text')
-  content: string;
-
-  @Column('timestamptz')
-  updatedAt: Date;
+  name: string;
 }
