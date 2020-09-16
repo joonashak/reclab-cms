@@ -7,6 +7,7 @@ export default [
     content: 'Lorem ipsum...',
     updatedAt: '2020-09-13T17:31:46.550Z',
     language: languageSeed[0],
+    isPublic: true,
   },
   {
     id: '350feb92-7be8-4df3-812e-cc8a491c1344',
@@ -14,5 +15,6 @@ export default [
     content: '...dolor sit amet',
     updatedAt: '2020-09-14T19:32:46.550Z',
     language: languageSeed[0],
+    isPublic: true,
   },
 ];

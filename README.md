@@ -56,6 +56,15 @@ Run all tests:
 npm test
 ```
 
+### Linting
+
+Check linting (with auto-fix):
+
+```bash
+npm run lint
+npm run lint:fix
+```
+
 ## Deployment Pipeline
 
 The pipeline is set up for trunk-based development with pull requests and releases used as deployment triggers.
