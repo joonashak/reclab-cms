@@ -24,4 +24,7 @@ export class Page {
   @ManyToOne(type => Language, { nullable: false, eager: true })
   @JoinColumn()
   language: Language;
+
+  @Column({ default: false })
+  isPublic: boolean;
 }

@@ -18,6 +18,7 @@ Table page {
   authorId UUID [ref: > user.id, not null]
   editorId UUID [ref: > user.id, not null]
   languageId UUID [ref: > language.id, not null]
+  isPublic BOOL [not null, default: false]
 }
 
 Table route {
