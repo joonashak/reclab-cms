@@ -15,5 +15,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.8
+      - name: Run Linter
+        run: npm run lint
       - name: Run Tests
         run: docker-compose run test-app
