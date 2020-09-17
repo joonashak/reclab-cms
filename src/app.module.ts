@@ -6,6 +6,7 @@ import { PagesModule } from './pages/pages.module';
 import { RoutesModule } from './routes/routes.module';
 import { SeederModule } from './seeder/seeder.module';
 import { LanguagesModule } from './languages/languages.module';
+import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { LanguagesModule } from './languages/languages.module';
     RoutesModule,
     SeederModule,
     LanguagesModule,
+    MenuModule,
   ],
 })
 export class AppModule {}
