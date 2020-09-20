@@ -11,6 +11,6 @@ export class MenuService {
   ) {}
 
   async findAll(): Promise<MenuItem[]> {
-    return this.menuItemRepository.find();
+    return this.menuItemRepository.find({ relations: ['parent'] });
   }
 }
