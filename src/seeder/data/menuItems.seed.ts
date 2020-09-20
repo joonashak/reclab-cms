@@ -1,5 +1,5 @@
 import languageSeed from './language.seed';
-import routesSeed from "./routes.seed";
+import routesSeed from './routes.seed';
 
 export default [
   {
@@ -17,5 +17,16 @@ export default [
     path: null,
     language: languageSeed[0],
     route: routesSeed[1],
+  },
+  {
+    id: '0efd204d-1a0e-4b4a-ba46-676d4b5f0f64',
+    title: 'Nested Link',
+    order: 1,
+    path: null,
+    language: languageSeed[0],
+    route: null,
+    parent: {
+      id: '6d54b2b6-b957-4133-a660-c9b030f4b1d0',
+    },
   },
 ];

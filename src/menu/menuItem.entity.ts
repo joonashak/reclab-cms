@@ -30,7 +30,7 @@ export class MenuItem {
   @JoinColumn()
   route: Language;
 
-  @ManyToOne(type => MenuItem, { eager: true })
+  @ManyToOne(type => MenuItem)
   @JoinColumn()
   parent: MenuItem;
 }
