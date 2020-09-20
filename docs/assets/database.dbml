@@ -47,8 +47,9 @@ Table menuItem {
   title TEXT [not null]
   order INT [not null]
   path TEXT
-  languageId UUID [ref: > language.id, not null]
   routeId UUID [ref: > route.id]
+  languageId UUID [ref: > language.id, not null]
+  parentId UUID [ref: > menuItem.id]
   
   indexes {
     (order, languageId) [unique]

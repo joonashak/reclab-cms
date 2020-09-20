@@ -4,6 +4,7 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { Language } from '../languages/language.entity';
 import { Route } from '../routes/route.entity';
@@ -29,4 +30,18 @@ export class MenuItem {
   @ManyToOne(type => Route, { eager: true })
   @JoinColumn()
   route: Language;
+
+  // Self-referencing relation to create nested menus.
+  @ManyToOne(
+    type => MenuItem,
+    menuItem => menuItem.children,
+  )
+  //@JoinColumn()
+  parent: MenuItem;
+
+  @OneToMany(
+    type => MenuItem,
+    menuItem => menuItem.parent,
+  )
+  children: MenuItem[];
 }
