@@ -29,4 +29,8 @@ export class MenuItem {
   @ManyToOne(type => Route, { eager: true })
   @JoinColumn()
   route: Language;
+
+  @ManyToOne(type => MenuItem, { eager: true })
+  @JoinColumn()
+  parent: MenuItem;
 }
