@@ -27,6 +27,17 @@ export class UsersService {
     return this.usersRepository.findOne({ username });
   }
 
+  /**
+   * Same as findOne but includes `passwordHash` in the result.
+   * To be used only in authentication!
+   */
+  findOneWithPasswordHash(username: string): Promise<User> {
+    return this.usersRepository.createQueryBuilder('user')
+      .addSelect('user.passwordHash')
+      .where({ username })
+      .getOne();
+  }
+
   async remove(id: string): Promise<void> {
     await this.usersRepository.delete(id);
   }
