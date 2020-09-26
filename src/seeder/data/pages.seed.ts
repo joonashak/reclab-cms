@@ -11,6 +11,7 @@ export default [
     language: languageSeed[0],
     isPublic: true,
     author: usersSeed[0],
+    editor: null,
   },
   {
     id: '350feb92-7be8-4df3-812e-cc8a491c1344',
@@ -21,5 +22,6 @@ export default [
     language: languageSeed[0],
     isPublic: true,
     author: usersSeed[0],
+    editor: null,
   },
 ];
