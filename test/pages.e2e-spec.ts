@@ -1,10 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { AppModule } from '../src/app.module';
 import pagesSeed from '../src/seeder/data/pages.seed';
 
-describe('AppController (e2e)', () => {
+// Remove fields that are not returned by the API.
+const pages = pagesSeed.map(page => {
+  const { author, ...rest } = page;
+  const { id, username } = author;
+  return { ...rest, author: { id, username } };
+});
+
+describe('/pages', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -24,6 +31,6 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/pages')
       .expect(200)
-      .expect(pagesSeed);
+      .expect(pages);
   });
 });
