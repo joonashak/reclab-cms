@@ -19,6 +19,6 @@ export class PagesService {
   }
 
   async findAllPublic(): Promise<Page[]> {
-    return this.pagesRepository.find();
+    return this.pagesRepository.find({ isPublic: false });
   }
 }
