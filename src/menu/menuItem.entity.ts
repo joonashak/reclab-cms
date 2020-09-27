@@ -7,7 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Language } from '../languages/language.entity';
-import { Route } from '../routes/route.entity';
+import { Page } from '../pages/page.entity';
 
 @Entity({ name: 'menuItem' })
 export class MenuItem {
@@ -27,9 +27,9 @@ export class MenuItem {
   @JoinColumn()
   language: Language;
 
-  @ManyToOne(type => Route, { eager: true })
+  @ManyToOne(type => Page, { eager: true })
   @JoinColumn()
-  route: Language;
+  page: Page;
 
   // Self-referencing relation to create nested menus.
   @ManyToOne(

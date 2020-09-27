@@ -12,6 +12,7 @@ export default [
     isPublic: true,
     author: usersSeed[0],
     editor: null,
+    path: '/page1'
   },
   {
     id: '350feb92-7be8-4df3-812e-cc8a491c1344',
@@ -23,5 +24,6 @@ export default [
     isPublic: true,
     author: usersSeed[0],
     editor: null,
+    path: '/page2'
   },
 ];

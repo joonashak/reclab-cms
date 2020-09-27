@@ -11,7 +11,7 @@ const pages = pagesSeed.map(page => {
   return { ...rest, author: { id, username } };
 });
 
-describe('/pages', () => {
+describe('/page', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -29,7 +29,7 @@ describe('/pages', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/pages')
+      .get('/page')
       .expect(200)
       .expect(pages);
   });
