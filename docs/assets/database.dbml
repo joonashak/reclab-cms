@@ -19,12 +19,7 @@ Table page {
   editorId UUID [ref: > user.id, not null]
   languageId UUID [ref: > language.id, not null]
   isPublic BOOL [not null, default: false]
-}
-
-Table route {
-  id UUID [pk]
-  pageId UUID [ref: > page.id, not null]
-  path TEXT [not null, unique]
+  path TEXT
 }
 
 Table language {
@@ -47,7 +42,7 @@ Table menuItem {
   title TEXT [not null]
   order INT [not null]
   path TEXT
-  routeId UUID [ref: > route.id]
+  pageId UUID [ref: > page.id]
   languageId UUID [ref: > language.id, not null]
   parentId UUID [ref: > menuItem.id]
   

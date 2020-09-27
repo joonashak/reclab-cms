@@ -39,4 +39,7 @@ export class Page {
   @ManyToOne(type => User, { eager: true })
   @JoinColumn()
   editor: User;
+
+  @Column('text', { nullable: true })
+  path: string;
 }

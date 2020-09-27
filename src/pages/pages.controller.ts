@@ -13,7 +13,7 @@ import { REQUEST } from '@nestjs/core';
 import { User } from '../users/user.entity';
 import UserDecorator from '../users/user.decorator';
 
-@Controller('pages')
+@Controller('page')
 export class PagesController {
   constructor(
     private readonly pagesService: PagesService,

@@ -2,10 +2,8 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Connection, Repository } from 'typeorm';
 import { Page } from '../pages/page.entity';
-import { Route } from '../routes/route.entity';
 import { User } from '../users/user.entity';
 import pagesSeed from './data/pages.seed';
-import routesSeed from './data/routes.seed';
 import usersSeed from './data/users.seed';
 import { Language } from '../languages/language.entity';
 import languageSeed from './data/language.seed';
@@ -24,8 +22,6 @@ export class SeederService {
     private connection: Connection,
     @InjectRepository(Page)
     private readonly pageRepository: Repository<Page>,
-    @InjectRepository(Route)
-    private readonly routeRepository: Repository<Route>,
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
     @InjectRepository(Language)
@@ -45,7 +41,6 @@ export class SeederService {
     await this.userRepository.save(usersSeed);
     await this.languageRepository.save(languageSeed);
     await this.pageRepository.save(pagesSeed);
-    await this.routeRepository.save(routesSeed);
     await this.menuItemRepository.save(menuItemsSeed);
   }
 }

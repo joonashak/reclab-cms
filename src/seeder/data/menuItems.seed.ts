@@ -1,5 +1,5 @@
 import languageSeed from './language.seed';
-import routesSeed from './routes.seed';
+import pagesSeed from "./pages.seed";
 
 export default [
   {
@@ -8,7 +8,7 @@ export default [
     order: 0,
     path: null,
     language: languageSeed[0],
-    route: routesSeed[0],
+    page: pagesSeed[0]
   },
   {
     id: '6d54b2b6-b957-4133-a660-c9b030f4b1d0',
@@ -16,7 +16,7 @@ export default [
     order: 1,
     path: null,
     language: languageSeed[0],
-    route: routesSeed[1],
+    page: pagesSeed[1]
   },
   {
     id: '0efd204d-1a0e-4b4a-ba46-676d4b5f0f64',

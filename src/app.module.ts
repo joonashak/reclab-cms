@@ -3,7 +3,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
-import { RoutesModule } from './routes/routes.module';
 import { SeederModule } from './seeder/seeder.module';
 import { LanguagesModule } from './languages/languages.module';
 import { MenuModule } from './menu/menu.module';
@@ -19,7 +18,6 @@ import { MenuModule } from './menu/menu.module';
     UsersModule,
     AuthModule,
     PagesModule,
-    RoutesModule,
     SeederModule,
     LanguagesModule,
     MenuModule,
