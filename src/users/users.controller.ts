@@ -28,7 +28,9 @@ export class UsersController {
    * @param createUserDto
    */
   @Post('initial')
-  async createInitialUser(@Body() createUserDto: CreateUserDto): Promise<PublicUserDto> {
+  async createInitialUser(
+    @Body() createUserDto: CreateUserDto,
+  ): Promise<PublicUserDto> {
     if ((await this.usersService.findAll()).length) {
       throw new HttpException(
         'User table already populated.',
@@ -37,7 +39,7 @@ export class UsersController {
     }
 
     const newUser = await this.usersService.create(createUserDto);
-    const { passwordHash, ...res } = newUser;
-    return res;
+    const { username } = newUser;
+    return { username };
   }
 }
