@@ -17,7 +17,7 @@ describe('/page', () => {
       .expect(apiPages);
   });
 
-  afterEach(() => {
-    app.close();
+  afterEach(async () => {
+    await app.close();
   });
 });
