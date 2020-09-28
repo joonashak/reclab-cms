@@ -18,4 +18,8 @@ describe('/auth/login', () => {
 
     expect(res.body).to.have.property('accessToken');
   });
+
+  afterEach(() => {
+    app.close();
+  });
 });

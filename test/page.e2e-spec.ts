@@ -16,4 +16,8 @@ describe('/page', () => {
       .expect(200)
       .expect(apiPages);
   });
+
+  afterEach(() => {
+    app.close();
+  });
 });
