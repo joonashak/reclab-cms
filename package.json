@@ -12,7 +12,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "npm run start:dev",
+    "start": "npm run start:dev; exit 0",
     "start:dev": "docker-compose up db adminer app; exit 0",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
