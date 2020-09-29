@@ -1,4 +1,3 @@
-import languageSeed from './language.seed';
 import pagesSeed from "./pages.seed";
 
 export default [
@@ -7,7 +6,7 @@ export default [
     title: 'Link 1',
     order: 0,
     path: null,
-    language: languageSeed[0],
+    language: 'fi',
     page: pagesSeed[0]
   },
   {
@@ -15,7 +14,7 @@ export default [
     title: 'Link 2',
     order: 1,
     path: null,
-    language: languageSeed[0],
+    language: 'fi',
     page: pagesSeed[1]
   },
   {
@@ -23,7 +22,7 @@ export default [
     title: 'Nested Link',
     order: 1,
     path: null,
-    language: languageSeed[0],
+    language: 'fi',
     route: null,
     parent: {
       id: '6d54b2b6-b957-4133-a660-c9b030f4b1d0',

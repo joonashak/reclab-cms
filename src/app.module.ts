@@ -4,7 +4,6 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { PagesModule } from './pages/pages.module';
 import { SeederModule } from './seeder/seeder.module';
-import { LanguagesModule } from './languages/languages.module';
 import { MenuModule } from './menu/menu.module';
 
 @Module({
@@ -19,7 +18,6 @@ import { MenuModule } from './menu/menu.module';
     AuthModule,
     PagesModule,
     SeederModule,
-    LanguagesModule,
     MenuModule,
   ],
 })

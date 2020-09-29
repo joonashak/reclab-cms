@@ -5,8 +5,8 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { Language } from '../languages/language.entity';
 import { User } from '../users/user.entity';
+import languageEnum from '../enums/language.enum';
 
 @Entity()
 export class Page {
@@ -25,9 +25,8 @@ export class Page {
   @Column('timestamptz', { nullable: true })
   updatedAt: Date;
 
-  @ManyToOne(type => Language, { nullable: false, eager: true })
-  @JoinColumn()
-  language: Language;
+  @Column({ type: 'enum', enum: languageEnum })
+  language: string;
 
   @Column({ default: false })
   isPublic: boolean;
