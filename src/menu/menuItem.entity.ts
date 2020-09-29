@@ -6,8 +6,8 @@ import {
   JoinColumn,
   OneToMany,
 } from 'typeorm';
-import { Language } from '../languages/language.entity';
 import { Page } from '../pages/page.entity';
+import languageEnum from '../enums/language.enum';
 
 @Entity({ name: 'menuItem' })
 export class MenuItem {
@@ -23,9 +23,8 @@ export class MenuItem {
   @Column('text', { nullable: true })
   path: string;
 
-  @ManyToOne(type => Language, { nullable: false, eager: true })
-  @JoinColumn()
-  language: Language;
+  @Column({ type: 'enum', enum: languageEnum })
+  language: string;
 
   @ManyToOne(type => Page, { eager: true })
   @JoinColumn()
@@ -36,7 +35,6 @@ export class MenuItem {
     type => MenuItem,
     menuItem => menuItem.children,
   )
-  //@JoinColumn()
   parent: MenuItem;
 
   @OneToMany(

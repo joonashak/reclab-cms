@@ -17,15 +17,9 @@ Table page {
   updatedAt TIMESTAMPZ [not null, default: 'NOW()']
   authorId UUID [ref: > user.id, not null]
   editorId UUID [ref: > user.id, not null]
-  languageId UUID [ref: > language.id, not null]
+  language LANGUAGE [not null]
   isPublic BOOL [not null, default: false]
   path TEXT
-}
-
-Table language {
-  id UUID [pk]
-  code TEXT [not null]
-  name TEXT [not null]
 }
 
 Table translation {
@@ -43,10 +37,15 @@ Table menuItem {
   order INT [not null]
   path TEXT
   pageId UUID [ref: > page.id]
-  languageId UUID [ref: > language.id, not null]
+  language LANGUAGE [not null]
   parentId UUID [ref: > menuItem.id]
   
   indexes {
-    (order, languageId) [unique]
+    (order, language) [unique]
   }
+}
+
+enum LANGUAGE {
+  fi
+  en
 }

@@ -1,4 +1,3 @@
-import languageSeed from './language.seed';
 import usersSeed from './users.seed';
 
 export default [
@@ -8,7 +7,7 @@ export default [
     content: 'Lorem ipsum...',
     createdAt: '2020-09-12T17:31:46.550Z',
     updatedAt: '2020-09-13T17:31:46.550Z',
-    language: languageSeed[0],
+    language: 'fi',
     isPublic: true,
     author: usersSeed[0],
     editor: null,
@@ -20,7 +19,7 @@ export default [
     content: '...dolor sit amet',
     createdAt: '2020-09-13T17:31:46.550Z',
     updatedAt: '2020-09-14T19:32:46.550Z',
-    language: languageSeed[0],
+    language: 'fi',
     isPublic: true,
     author: usersSeed[0],
     editor: null,

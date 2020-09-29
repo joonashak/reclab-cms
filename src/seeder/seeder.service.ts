@@ -5,8 +5,6 @@ import { Page } from '../pages/page.entity';
 import { User } from '../users/user.entity';
 import pagesSeed from './data/pages.seed';
 import usersSeed from './data/users.seed';
-import { Language } from '../languages/language.entity';
-import languageSeed from './data/language.seed';
 import { MenuItem } from '../menu/menuItem.entity';
 import menuItemsSeed from './data/menuItems.seed';
 
@@ -24,8 +22,6 @@ export class SeederService {
     private readonly pageRepository: Repository<Page>,
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
-    @InjectRepository(Language)
-    private readonly languageRepository: Repository<Language>,
     @InjectRepository(MenuItem)
     private readonly menuItemRepository: Repository<MenuItem>,
   ) {}
@@ -39,7 +35,6 @@ export class SeederService {
   async seed(): Promise<void> {
     protect();
     await this.userRepository.save(usersSeed);
-    await this.languageRepository.save(languageSeed);
     await this.pageRepository.save(pagesSeed);
     await this.menuItemRepository.save(menuItemsSeed);
   }
