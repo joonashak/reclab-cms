@@ -13,6 +13,7 @@ import { MenuModule } from './menu/menu.module';
       url: process.env.DATABASE_URL,
       autoLoadEntities: true,
       synchronize: true,
+      logging: process.env.NODE_ENV === 'development',
     }),
     UsersModule,
     AuthModule,

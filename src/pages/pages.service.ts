@@ -19,6 +19,12 @@ export class PagesService {
   }
 
   async findAllPublic(): Promise<Page[]> {
-    return this.pagesRepository.find({ isPublic: true });
+    // Jos SO ei vastaa, niin voi ratkaista tallentamalla relaation molempiin suuntiin luontivaiheessa.
+    // https://stackoverflow.com/questions/64124414/join-self-referencing-relation-both-ways-with-typeorm
+    return this.pagesRepository
+      .createQueryBuilder('page')
+      .leftJoinAndSelect('page.translations', 'translations')
+      .select(['page', 'translations.language', 'translations.path'])
+      .getMany();
   }
 }

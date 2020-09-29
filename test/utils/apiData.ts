@@ -4,7 +4,10 @@
 import pagesSeed from '../../src/seeder/data/pages.seed';
 
 export const apiPages = pagesSeed.map(page => {
-  const { author, ...rest } = page;
-  const { id, username } = author;
-  return { ...rest, author: { id, username } };
+  const { author, editor, translations, ...rest } = page;
+  const cleanTranslations = translations.map(({ language, path, ...rest }) => ({
+    language,
+    path,
+  }));
+  return { ...rest, translations: cleanTranslations };
 });
