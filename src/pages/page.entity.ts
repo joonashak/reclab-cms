@@ -4,6 +4,8 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { User } from '../users/user.entity';
 import languageEnum from '../enums/language.enum';
@@ -41,4 +43,16 @@ export class Page {
 
   @Column('text', { nullable: true })
   path: string;
+
+  // Link translations of the same page together.
+  @ManyToMany(
+    type => Page,
+    page => page.translations,
+  )
+  @JoinTable({
+    name: 'translation',
+    joinColumn: { name: 'originPageId' },
+    inverseJoinColumn: { name: 'targetPageId' },
+  })
+  translations: Page[];
 }
